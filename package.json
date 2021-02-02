@@ -1,0 +1,79 @@
+{
+    "name": "@dataclinic/interview-web",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@date-io/moment": "1.x",
+        "@material-ui/core": "^4.10.2",
+        "@material-ui/icons": "^4.9.1",
+        "@material-ui/pickers": "^3.2.10",
+        "@dataclinic/interview": "1.0.0",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.3.2",
+        "@testing-library/user-event": "^7.1.2",
+        "@types/google-map-react": "^1.1.5",
+        "@types/googlemaps": "^3.39.3",
+        "@types/jest": "^24.0.0",
+        "@types/node": "^12.0.0",
+        "@types/react": "^16.9.0",
+        "@types/react-dom": "^16.9.0",
+        "@types/react-sound": "^1.2.2",
+        "@types/string-hash": "^1.1.1",
+        "google-map-react": "^1.1.6",
+        "moment": "^2.26.0",
+        "react": "^16.13.0",
+        "react-debounce-input": "^3.2.2",
+        "react-dom": "^16.13.0",
+        "react-scripts": "3.4.0",
+        "react-sound": "^1.2.0",
+        "react-use-geolocation": "^0.1.1",
+        "rrweb": "^0.7.33",
+        "slugify": "^1.4.0",
+        "string-hash": "^1.1.3",
+        "typescript": "~3.7.2",
+        "uuid": "^8.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "CI=\"\" react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "predeploy": "yarn build",
+        "deploy": "gh-pages -d build",
+        "predeploy-stage": "yarn build",
+        "deploy-stage": "yarn run predeploy-stage && gh-pages --remote stage -d build && rm -rf build",
+        "predeploy": "yarn build",
+        "lerna": "yarn start",
+        "prettier": "prettier --write src",
+        "generate-audio": "ts-node --project scripts/tsconfig.json scripts/generate_audio.ts "
+    },
+    "eslintConfig": {
+        "extends": "react-app"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@types/request-promise": "^4.1.46",
+        "dotenv": "^8.2.0",
+        "gh-pages": "^2.2.0",
+        "prettier": "2.0.2",
+        "request": "^2.88.2",
+        "request-promise": "^4.2.5",
+        "ts-node": "^8.9.1",
+        "xmlbuilder": "^15.1.1"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "singleQuote": true
+    }
+}
