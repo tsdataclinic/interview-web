@@ -130,7 +130,6 @@ function App() {
     const StartNewTranslation = useLocalizedString('StartNewReport');
     const StorySavedTranslation = useLocalizedString('ReportSaved');
     const ThankYouTranslation = useLocalizedString('ThankYou');
-
     return (
         <>
             <ThemeProvider theme={theme}>

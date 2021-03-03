@@ -22,14 +22,45 @@ export const webModeratorConfig = (
     [QuizQuestion.NAME]:{
         prompt: "What is your name?",
         entrySpecs:[{
-            type:'free-text',
-            title: 'What is your name?'
+            type:'free_text',
+            title: 'What is your name?',
+            field:"name"
             }
-        ]
+        ],
+        complete:(partial: ResponseData)=>{ 
+            console.log(partial)
+            return partial.name.length > 1
+        }
     },
     [QuizQuestion.GUESS]:{
         prompt: "Guess a number",
-
+        complete: (partial: ResponseData)=> partial.guess !== undefined,
+        entrySpecs:[{
+            type:'multiple_choice',
+            field: 'guess',
+            options:[
+                {
+                    "text":"1",
+                    "value":1
+                },
+                {
+                    "text":"10",
+                    "value":10
+                },
+                {
+                    "text":"7",
+                    "value":7
+                },
+                {
+                    "text":"100",
+                    "value":100
+                },
+                {
+                    "text":"4",
+                    "value":4
+                }
+            ]
+        }]
     },
     [QuizQuestion.CORRECT_ENDING]:{
         prompt: "Congratulations! You got it right!",

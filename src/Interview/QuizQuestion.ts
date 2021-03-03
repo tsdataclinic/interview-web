@@ -1,6 +1,6 @@
 export enum QuizQuestion {
-    NAME,
-    GUESS,
-    INCORRECT_GUESS,
-    CORRECT_ENDING,
+    NAME= "NAME",
+    GUESS="GUESS",
+    INCORRECT_GUESS="INCORRECT_GUESS",
+    CORRECT_ENDING = "CORRECT_ENDING",
 }

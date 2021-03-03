@@ -5,6 +5,8 @@ export class QuizScript implements Script<QuizQuestion> {
     private correctAnswer: number = 7;
 
     public setup(router: QuestionRouter<QuizQuestion>) {
+        router.push(QuizQuestion.GUESS);
+        router.push(QuizQuestion.NAME);
     }
 
     public prepare(
@@ -25,7 +27,7 @@ export class QuizScript implements Script<QuizQuestion> {
         }
         switch (question) {
             case QuizQuestion.GUESS:
-                if (data.numbersGuessed[0] == this.correctAnswer) {
+                if (data.guess == this.correctAnswer) {
                     router.push(QuizQuestion.CORRECT_ENDING);
                 } else {
                     router.push(QuizQuestion.INCORRECT_GUESS);

@@ -8,24 +8,26 @@ export class WebModerator implements Moderator<QuizQuestion> {
     constructor(
         private lang: SupportedLanguage,
         private setCurrentScreen: (screen: Screen) => void,
-        private lastScreen: Screen,
-        private lastQuestion: QuizQuestion
+        private lastScreen?: Screen,
+        private lastQuestion?: QuizQuestion
     ) {}
 
     public setLang(lang: SupportedLanguage) {
         this.lang = lang;
-        const screenConfig = webModeratorConfig(
-            this.lastScreen.responseData,
-            this.lang
-        );
-        const screen = {
-            ...screenConfig[this.lastQuestion],
-            submitAnswer: this.lastScreen.submitAnswer,
-            rewind: this.lastScreen.rewind,
-            responseData: this.lastScreen.responseData,
-            milestones: this.lastScreen.milestones,
-        } as Screen;
-        this.setCurrentScreen(screen);
+        if (this.lastScreen && this.lastQuestion){
+            const screenConfig = webModeratorConfig(
+                this.lastScreen.responseData,
+                this.lang
+            );
+            const screen = {
+                ...screenConfig[this.lastQuestion],
+                submitAnswer: this.lastScreen.submitAnswer,
+                rewind: this.lastScreen.rewind,
+                responseData: this.lastScreen.responseData,
+                milestones: this.lastScreen.milestones,
+            } as Screen;
+            this.setCurrentScreen(screen);
+        }
     }
 
     public ask(
@@ -55,7 +57,7 @@ export class WebModerator implements Moderator<QuizQuestion> {
 
         this.lastScreen = screen;
         this.lastQuestion = question;
-
+        // debugger
         this.setCurrentScreen(screen);
     }
 }

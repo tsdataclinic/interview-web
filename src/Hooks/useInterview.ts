@@ -7,6 +7,7 @@ import { QuizQuestion } from '../Interview/QuizQuestion';
 import { StateSnapshot } from '@dataclinic/interview/dist/StateSnapshot';
 import { SupportedLanguage } from '../Interview/SupportedLanguage';
 import { webModeratorConfig } from '../Interview/WebModeratorConfig';
+import { Web } from '@material-ui/icons';
 
 export function useInterview(
     language: SupportedLanguage
@@ -31,7 +32,7 @@ export function useInterview(
         const script = new QuizScript();
         const moderator = new WebModerator(language, (entryScreen: Screen) =>
             setCurrentScreen(entryScreen)
-        );
+         );
         const interview = new Interview(script, moderator);
         interview.debug(
             (message: string) => {
