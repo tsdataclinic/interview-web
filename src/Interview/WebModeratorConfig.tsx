@@ -18,4 +18,32 @@ import { SupportedLanguage } from './SupportedLanguage';
 export const webModeratorConfig = (
     data: ResponseData,
     lang: SupportedLanguage
-) => ({});
+) => ({
+    [QuizQuestion.NAME]:{
+        prompt: "What is your name?",
+        entrySpecs:[{
+            type:'free-text',
+            title: 'What is your name?'
+            }
+        ]
+    },
+    [QuizQuestion.GUESS]:{
+        prompt: "Guess a number",
+
+    },
+    [QuizQuestion.CORRECT_ENDING]:{
+        prompt: "Congratulations! You got it right!",
+        entrySpecs:[{
+            type:'info',
+            content:'You did so well!'
+        }]
+    },
+    [QuizQuestion.INCORRECT_GUESS]:{
+        prompt: "Sorry that was wrong",
+        entrySpecs:[{
+            type:'info',
+            content: "That guess was not correct. Try again!",
+        }]
+    }
+
+});

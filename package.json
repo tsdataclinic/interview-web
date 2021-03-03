@@ -3,10 +3,10 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@dataclinic/interview": "^1.0.0",
+        "@dataclinic/interview": "^1.0.1",
         "@date-io/moment": "1.x",
-        "@material-ui/core": "^4.10.2",
-        "@material-ui/icons": "^4.9.1",
+        "@material-ui/core": "^4.11.3",
+        "@material-ui/icons": "^4.11.2",
         "@material-ui/pickers": "^3.2.10",
         "@testing-library/jest-dom": "^4.2.4",
         "@testing-library/react": "^9.3.2",
@@ -30,7 +30,7 @@
         "rrweb": "^0.7.33",
         "slugify": "^1.4.0",
         "string-hash": "^1.1.3",
-        "typescript": "~3.7.2",
+        "typescript": "^3.8.0",
         "uuid": "^8.0"
     },
     "scripts": {
@@ -38,11 +38,6 @@
         "build": "CI=\"\" react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "predeploy": "yarn build",
-        "deploy": "gh-pages -d build",
-        "predeploy-stage": "yarn build",
-        "deploy-stage": "yarn run predeploy-stage && gh-pages --remote stage -d build && rm -rf build",
-        "lerna": "yarn start",
         "prettier": "prettier --write src",
         "generate-audio": "ts-node --project scripts/tsconfig.json scripts/generate_audio.ts "
     },

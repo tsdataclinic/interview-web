@@ -2,6 +2,8 @@ import { Script, QuestionRouter, ResponseData } from '@dataclinic/interview';
 import { QuizQuestion } from './QuizQuestion';
 
 export class QuizScript implements Script<QuizQuestion> {
+    private correctAnswer: number = 7;
+
     public setup(router: QuestionRouter<QuizQuestion>) {
     }
 
@@ -10,9 +12,6 @@ export class QuizScript implements Script<QuizQuestion> {
         question: QuizQuestion,
         data: ResponseData
     ) {
-        if (question === QuizQuestion.ADDITIONAL_DETAILS) {
-            router.milestone('required_portion_complete');
-        }
     }
 
     public process(
@@ -25,6 +24,21 @@ export class QuizScript implements Script<QuizQuestion> {
             return;
         }
         switch (question) {
+            case QuizQuestion.GUESS:
+                if (data.numbersGuessed[0] == this.correctAnswer) {
+                    router.push(QuizQuestion.CORRECT_ENDING);
+                } else {
+                    router.push(QuizQuestion.INCORRECT_GUESS);
+                }
+                router.next();
+                break;
+            case QuizQuestion.INCORRECT_GUESS:
+                router.push(QuizQuestion.GUESS);
+                router.next();
+                break;
+            case QuizQuestion.CORRECT_ENDING:
+                router.complete();
+                break;
             default:
                 router.next();
                 break;

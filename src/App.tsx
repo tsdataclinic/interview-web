@@ -108,15 +108,6 @@ function App() {
         setPlayMultiStopped();
     };
 
-    useEffect(() => {
-        document.addEventListener('keypress', (e) => {
-            if (e.key === '[') {
-                setLanguage('hi');
-            } else if (e.key === ']') {
-                setLanguage('en');
-            }
-        });
-    }, []);
 
     useEffect(() => {
         soundManager.setup({ debugMode: false });

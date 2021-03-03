@@ -11,7 +11,7 @@ type LanguageState = {
 };
 
 const initialState: LanguageState = {
-    language: 'en',
+    language: SupportedLanguage.English,
 };
 
 const LanguageContext = createContext<{

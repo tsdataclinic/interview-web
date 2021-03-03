@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { WebModerator } from '../Interview/WebModerator';
-import { Interview, ResponseData } from '@dataclinic/interview/';
+import { Interview, ResponseData } from '@dataclinic/interview';
 import { QuizScript } from '../Interview/QuizScript';
 import { Screen } from '../Interview/Screen';
 import { QuizQuestion } from '../Interview/QuizQuestion';
