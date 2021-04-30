@@ -52,6 +52,6 @@ There are two buttons on the bottom bar. One on the right (i.e. Forward) and one
 -   `incompleteForward` - how the right button should appear when the current screen is not complete
 -   `back` - how the left button should appear.
 
-In all cases, they should be set to an object with two optoional properties: `icon`, the icon to display, and `prompt`, the text to show. `incompleteForward` has a third option: `action`, which should be set to `'forward'` or `'skip'` depending on whether the incomplete answer should be submitted in partial. Setting any of the three to `null` will cause it to not appear at all.
+In all cases, they should be set to an object with two optional properties: `icon`, the icon to display, and `prompt`, the text to show. `incompleteForward` has a third option: `action`, which should be set to `'forward'` or `'skip'` depending on whether the incomplete answer should be submitted in partial. Setting any of the three to `null` will cause it to not appear at all.
 
 ---
