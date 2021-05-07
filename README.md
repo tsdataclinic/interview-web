@@ -4,7 +4,7 @@ The Interview app is backed by an Interview building library `@dataclinic/interv
 
 The Interview app implements a Moderator which presents questions via a web application and records the responses via configurable screens. It will be helpful to have read the documentation for the library first.
 
-Chekout a guessing game example here: [http://dc-interview.netlify.app](dc-interview.netlify.app).
+Check out a guessing game example here: [http://dc-interview.netlify.app](dc-interview.netlify.app).
 
 ## Interview Implementation
 
